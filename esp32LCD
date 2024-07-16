@@ -1,0 +1,32 @@
+ #include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27,16,2);
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  Serial.println("Hello, ESP32!");
+  lcd.init();
+  lcd.backlight();
+  pinMode(14, INPUT);
+  pinMode(4, OUTPUT);
+}
+void loop() {
+  lcd.setCursor(0,0);
+  lcd.print("Hello");
+  int i=digitalRead(14);
+  Serial.println(i);
+  if(i==0)
+  {lcd.setCursor(0,1);
+  lcd.print("Welcome");
+  digitalWrite(4, HIGH);
+  }
+  else
+  {lcd.setCursor(0,1);
+  lcd.print("       ");
+  digitalWrite(4, LOW);
+  }
+ }
+
+
+
+
+
