@@ -8,10 +8,10 @@
  
 $temp = $_GET['temp'];
 $hum = $_GET['hum'];
-$gas = $_GET['gas'];
+ 
 $date = date("Y-m-d h:i:s");
-$sql = "INSERT INTO iottable1 SET time = '$date'";
-$sql = "INSERT INTO iottable1 (time,temp,hum,gas) VALUES ('$date','$temp','$hum','$gas')";
+$sql = "INSERT INTO iottable SET time = '$date'";
+$sql = "INSERT INTO iottable (time,temp,hum) VALUES ('$date','$temp','$hum')";
 if ($connection->query($sql) === TRUE) {
     echo "Data Saved Successfully!";
 } else {
