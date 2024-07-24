@@ -1,8 +1,15 @@
  
 
 <?php
-   include("conec.php");
-   
+  	$server="localhost";
+		$user="diypro_iotuser";
+		$pass="IotUser@123";
+		$db="diypro_database1";
+	   	$connection = mysqli_connect($server, $user, $pass,$db);
+	   	if (!$connection) {
+	    	die('MySQL ERROR: ' . mysql_error());
+		}
+
    date_default_timezone_set('Asia/Kolkata');
  
  
